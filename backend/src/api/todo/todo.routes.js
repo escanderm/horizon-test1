@@ -33,7 +33,7 @@ router.post('/addTask', async (req, res, next) => {
 		if (readyData.error) {
 			res.status(500).send(readyData.message)
 		}
-		res.json({ success: true, data: readyData })
+		res.status(201).json({ success: true, data: readyData })
 	} catch (e) {
 		next(e)
 	}
